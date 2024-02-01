@@ -1,0 +1,31 @@
+\documentclass{article}
+
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[compatibility]{scikgtex}
+
+\title{
+% add title to metadata
+  \metatitle{Mining Binary Constraints in the Construction of Feature Models}
+}
+\author{
+% add author to metadata
+  \metaauthor{Li Yi}
+  \and
+  \metaauthor{Wei Zhang}
+  \and
+  \metaauthor{Haiyan Zhao}
+  \and
+  \metaauthor{Zhi Jin}
+  \and
+  \metaauthor{Hong Mei}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Feature models provide an effective way to organize and reuse requirements in a specific domain. A feature model consists of a feature tree and cross-tree constraints. Identifying features and then building a feature tree takes a lot of effort, and many semi-automated approaches have been proposed to help the situation. However, \researchproblem{finding cross-tree constraints is often more challenging which still lacks the help of automation}. In this paper, we propose an \objective{approach to mining cross-tree binary constraints in the construction of feature models}. Binary constraints are the most basic kind of cross-tree constraints that involve exactly two features and can be further classified into two sub-types, i.e. requires and excludes. Given these two sub-types, a pair of any two features in a feature model falls into one of the following classes: no constraints between them, a requires between them, or an excludes between them. Therefore we perform a \method{3-class classification on feature pairs to mine binary constraints from features. We incorporate a support vector machine as the classifier and utilize a genetic algorithm to optimize it. We conduct a series of experiments on two feature models constructed by third parties, to evaluate the effectiveness of our approach under different conditions that might occur in practical use}. Results show that we can mine binary constraints at a \result{high recall (near 100\% in most cases)}, which is important because finding a missing constraint is very costly in real, often large, feature models.
+\end{abstract}
+
+\end{document}

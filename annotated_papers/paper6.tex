@@ -1,0 +1,28 @@
+\documentclass{article}
+
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[compatibility]{scikgtex}
+
+\title{
+% add title to metadata
+  \metatitle{Predicting How to Test Requirements: An Automated Approach}
+}
+\author{
+% add author to metadata
+  \metaauthor{Jonas Winkler}
+  \and
+  \metaauthor{Jannis Grönberg}
+  \and
+  \metaauthor{Andreas Vogelsang}
+}
+\researchfield*{\uri{https://orkg.org/field/R112125}{Machine Learning}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+An \researchproblem{important task in requirements engineering is to identify and determine how to verify a requirement (e.g., by manual review, testing, or simulation; also called potential verification method). This information is required to effectively create test cases and verification plans for requirements}. In this paper, we propose an \objective{automatic approach to classify natural language requirements with respect to their potential verification methods (PVM)}. Our approach uses a \method{convolutional neural network architecture to implement a multiclass and multilabel classifier that assigns probabilities to a predefined set of six possible verification methods, which we derived from an industrial guideline. Additionally, we implemented a backtracing approach to analyze and visualize the reasons for the network’s decisions}. In a 10-fold cross validation on a set of about 27,000 industrial requirements, our approach achieved a \result{macro averaged F1 score of 0.79 across all labels}. For the classification into test or non test, the approach achieves an even higher F1 score of 0.94. The results show that our approach \conclusion{might help to increase the quality of requirements specifications with respect to the PVM attribute and guide engineers in effectively deriving test cases and verification plans}.
+\end{abstract}
+
+\end{document}

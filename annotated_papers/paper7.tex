@@ -1,0 +1,34 @@
+\documentclass{article}
+
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[compatibility]{scikgtex}
+
+\title{
+% add title to metadata
+  \metatitle{Automated Recommendation of Software
+Refactorings based on Feature Requests}
+}
+\author{
+% add author to metadata
+  \metaauthor{Ally S. Nyamawe}
+  \and
+  \metaauthor{Hui Liu}
+  \and
+  \metaauthor{Nan Niu}
+  \and
+  \metaauthor{Qasim Umer}
+  \and
+  \metaauthor{Zhendong Niu}
+}
+\researchfield*{\uri{https://orkg.org/field/R112125}{Machine Learning}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+During software evolution, developers often receive new requirements expressed as feature requests. To implement the requested features, developers have to perform necessary modifications (refactorings) to prepare for new adaptation that accommodates the new requirements. Software refactoring is a well-known technique that has been extensively used to improve software quality such as maintainability and extensibility. \researchproblem{However, it is often challenging to determine which kind of refactorings should be applied. Consequently, several approaches based on various heuristics have been proposed to recommend refactorings. However, there is still lack of automated support to recommend refactorings given a feature request}. To this end, in this paper, we propose a \objective{novel approach that recommends refactorings based on the history of the previously requested features and applied refactorings}. First, we exploit the state-of-the-art refactoring detection tools to identify the previous refactorings applied to implement the past feature requests.
+Second, we \method{train a machine classifier with the history data of the feature requests and refactorings applied on the commits that implemented the corresponding feature requests}. The machine classifier is then used to predict refactorings for new feature requests. We evaluate the proposed approach on the dataset of 43 open source Java projects and the results suggest that the proposed \conclusion{approach can accurately recommend refactorings}. (\result{average precision 73\%}).
+\end{abstract}
+
+\end{document}
