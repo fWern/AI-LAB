@@ -769,12 +769,25 @@ def datasets_evaluate():
     print(correctEntities+wrongEntities)
 
 
+def link_entity_to_text(text):
+    rules = [1, 2, 3, 4, 5, 8, 9, 10, 12, 13, 14]
+    entities, _ = process_text_E_R(text, rules)
+
+    for entity in entities:
+        uri = entity[0]
+        ent = entity[1]
+        text = text.replace(ent, f"\\uri{{{uri}}}{{{ent}}}")
+
+    print(text)
+    return text
+
+
 if __name__ == '__main__':
     global count
     count=0
     global threading
     threading=False
-    rules = [1,2,3,4,5,8,9,10,12,13,14]
-    entities, relations = process_text_E_R('The present work proposes the application of machine learning techniques.',rules)
-    print("entities", entities)
-    print("relations", relations)
+    #rules = [1,2,3,4,5,8,9,10,12,13,14]
+    #entities, relations = process_text_E_R('The present work proposes the application of machine learning techniques.',rules)
+    text = 'The present work proposes the application of machine learning techniques.'
+    link_entity_to_text(text)
