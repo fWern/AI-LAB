@@ -5,7 +5,7 @@ from Elastic import searchIndex as wiki_search_elastic
 from evaluation import evaluation as wiki_evaluation
 from SPARQLWrapper import SPARQLWrapper, JSON, POST
 from multiprocessing.pool import ThreadPool
-
+import regex as re
 
 nlp = spacy.load('en_core_web_sm')
 
@@ -770,14 +770,14 @@ def datasets_evaluate():
 
 
 def link_entity_to_text(text):
+    text = text.lower()
     rules = [1, 2, 3, 4, 5, 8, 9, 10, 12, 13, 14]
-    entities, _ = process_text_E_R(text, rules)
-
+    entities, _ = process_text_E_R(text.lower(), rules)
+    print(entities)
     for entity in entities:
         uri = entity[0]
-        ent = entity[1]
+        ent = entity[1].lower()
         text = text.replace(ent, f"\\uri{{{uri}}}{{{ent}}}")
-
     print(text)
     return text
 
