@@ -5,7 +5,6 @@ from Elastic import searchIndex as wiki_search_elastic
 from evaluation import evaluation as wiki_evaluation
 from SPARQLWrapper import SPARQLWrapper, JSON, POST
 from multiprocessing.pool import ThreadPool
-import regex as re
 
 nlp = spacy.load('en_core_web_sm')
 
@@ -789,5 +788,5 @@ if __name__ == '__main__':
     threading=False
     #rules = [1,2,3,4,5,8,9,10,12,13,14]
     #entities, relations = process_text_E_R('The present work proposes the application of machine learning techniques.',rules)
-    text = 'The present work proposes the application of machine learning techniques.'
+    text = "this is a sample text for the example to add an entity, in this case machine learning, to an text."
     link_entity_to_text(text)
