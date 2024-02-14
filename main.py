@@ -526,7 +526,7 @@ def evaluate(raw,rules,evaluation=True):
         global wrongEntities
         #wrongEntities=0
         global count
-        print(count)
+        #print(count)
         p_entity=0
         r_entity=0
         p_relation=0
@@ -691,7 +691,7 @@ def evaluate(raw,rules,evaluation=True):
                 else:
                     wrongEntities=wrongEntities+1
 
-        count=count+1
+        #count=count+1
         ############
         raw.append([[tup[1],tup[4]] for tup in mixedRelations])
         raw.append([[tup[1],tup[4]] for tup in entities])
@@ -701,10 +701,11 @@ def evaluate(raw,rules,evaluation=True):
         #raw.append(p_relation)
         #raw.append(r_relation)
 
-        global threading
-        if threading==True:
-            global results
-            results.append(raw)
+        #global threading
+        #if threading==True:
+        #    global results
+        results = []
+        results.append(raw)
         
         return raw
     except:
@@ -772,13 +773,11 @@ def link_entity_to_text(text):
     text = text.lower()
     rules = [1, 2, 3, 4, 5, 8, 9, 10, 12, 13, 14]
     entities, _ = process_text_E_R(text.lower(), rules)
-    print(entities)
     for entity in entities:
         uri = entity[0]
         ent = entity[1].lower()
         text = text.replace(ent, f"\\uri{{{uri}}}{{{ent}}}")
-    print(text)
-    return text
+    return entities, text
 
 
 if __name__ == '__main__':
