@@ -10,7 +10,7 @@ entities, text_linked = link_entity_to_text(QUERY)
 #[
 # ['http://orkg.org/orkg/resource/R4322', 'entity, in this case machine learning, to an text'],
 # ['http://orkg.org/orkg/resource/R4647', 'sample text for the example']
-# ]
+#]
 
 print(f"Input to Falcon 2.0: \n{QUERY}\n")
 print(f"Entities found for the QUERY : \n{entities}\n")
